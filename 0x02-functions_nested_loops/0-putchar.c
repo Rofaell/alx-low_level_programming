@@ -1,13 +1,14 @@
-#include "main.h"
-	/**
-	 * main - print _putchar
-	 * is written by mbah
-	 * Return: 0
-	 */
+#include<stdio.h>
+#include"main.h"
 
+/**
+* main - Entry Point
+* Description -prints _putchar, followed by a new line.
+* Return: 0
+*/
 
-	int main(void)
-	{
+int main(void)
+{
 	_putchar('_');
 	_putchar('p');
 	_putchar('u');
@@ -18,4 +19,4 @@
 	_putchar('r');
 	_putchar('\n');
 	return (0);
-	}
+}
