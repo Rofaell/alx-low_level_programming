@@ -1,87 +1,47 @@
-#include “main.h”
+#include "main.h"
 
 /**
-
-*print_times_table-prints times table
-
-*@n : time table to use
-
-* return :void
-
-*/
-
-Void print_times_tables(int n)
-
+ * print_times_table - prints the n times table, starting with 0
+ * @n: number of the times table
+ */
+void print_times_table(int n)
 {
+	int i, j, k;
 
-Int a =0, rep, b;
-
-If (n < 0 || n > 15)
-
-Return;
-
-While (a <= n)
-
-{
-
-For (b = 0; b <= n; b++)
-
-{
-
-Rep = a * b;
-
-If (b == 0)
-
-_putchar (‘0’ + rep);
-
-Eles if (rep < 10)
-
-{
-
-_putchar( ‘ ‘);
-
-_putchar (‘ ‘);
-
-_putchar (‘ 0’ + rep);
-
+	if (n >= 0 && n <= 15)
+	{
+		for (i = 0; i <= n; i++)
+		{
+			for (j = 0; j <= n; j++)
+			{
+				k = j * i;
+				if (j == 0)
+				{
+					_putchar(k + '0');
+				} else if (k < 10 && j != 0)
+				{
+					_putchar(',');
+					_putchar(' ');
+					_putchar(' ');
+					_putchar(' ');
+					_putchar(k + '0');
+				} else if (k >= 10 && k < 100)
+				{
+					_putchar(',');
+					_putchar(' ');
+					_putchar(' ');
+					_putchar((k / 10) + '0');
+					_putchar((k % 10) + '0');
+				} else if (k >= 100)
+				{
+					_putchar(',');
+					_putchar(' ');
+					_putchar((k / 100) + '0');
+					_putchar(((k / 10) % 10) + '0');
+					_putchar((k % 10) + '0');
+				}
+			}
+			_putchar('\n');
+		}
+	}
 }
-
-Eles if (rep < 100)
-
-{
-
-_putchar (‘ ‘);
-
-_putchar (‘ 0 ‘ + rep / 10);
-
-_putchar(‘ 0 ‘ + rep % 10);
-
-}
-
-Eles
-
-{
-
-_putchar( ‘ 0 ‘ + rep / 100);
-
-_putchar (‘ 0 ‘ + (rep – 100) / 10);
-
-_putchar (‘ 0 ‘ + rep % 10);
-
-}
-
-If (b < n)
-
-{
-
-_putchar (‘ , ‘);
-
-_putchar (‘ , ‘);
-
-}
-
-}
-
-_putchar (‘ \n ‘ );
-
-A++;
